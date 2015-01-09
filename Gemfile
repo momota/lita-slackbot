@@ -16,3 +16,5 @@ gem "lita-wikipedia"
 # fun
 gem "lita-sushiyuki"
 
+# local handler
+gem "lita-pet", path: "handlers/lita-pet"
