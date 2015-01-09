@@ -1,3 +1,9 @@
+PATH
+  remote: handlers/lita-pet
+  specs:
+    lita-pet (0.0.1)
+      lita (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -73,6 +79,7 @@ DEPENDENCIES
   lita-google
   lita-google-images
   lita-key-value
+  lita-pet!
   lita-slack
   lita-sushiyuki
   lita-wikipedia
