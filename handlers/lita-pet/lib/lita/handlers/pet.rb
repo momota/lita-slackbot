@@ -1,13 +1,28 @@
 module Lita
   module Handlers
     class Pet < Handler
-      route %r{^java\s+(.+)}, :with_java, help: { "java TEXT" => "reply back with java." }
-      route %r{(.+)\(回文\)$}, :palindrome
+      route /^java\s+(.+)/, :with_java, help: { "java TEXT" => "reply back with java." }
+      route /^(?:otp)\s+(.+)/, :otp, help: { "otp[ LENGTH]" => "reply one time password" }
+      route /(.+)\(回文\)$/, :palindrome
       route /^(?:bj|ブラック)/, :black
 
       def with_java( response )
         word = response.matches[0][0]
         response.reply "!!! #{word} とジャバ !!!"
+      end
+
+      def otp( response )
+        length = response.matches[0][0]
+        if length.to_i <= 0
+          len = 15
+        else
+          len = length.to_i
+        end
+        pattern = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
+        pattern += ["!", "#", "$", "%", "&", "(", ")",
+                    "=", "-", "^", "~", "*", "+", "?", "_"]
+        random_string = (0...len).map { pattern[rand( pattern.length )] }.join
+        response.reply random_string
       end
 
       def palindrome( response )
