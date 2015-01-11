@@ -16,7 +16,7 @@ module Lita
         pattern = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
         pattern += ["!", "#", "$", "%", "&", "(", ")",
                     "=", "-", "^", "~", "*", "+", "?", "_"]
-        random_string = (0...len).map { pattern[rand( pattern.length )] }.join
+        random_string = (0...length.to_i).map { pattern[rand( pattern.length )] }.join
         response.reply random_string
       end
 
