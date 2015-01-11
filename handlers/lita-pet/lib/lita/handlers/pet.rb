@@ -13,7 +13,7 @@ module Lita
 
       def otp( response )
         length = response.matches[0][0]
-        if length.to_i <= 0
+        if length.to_i <= 0 || length == nil
           len = 15
         else
           len = length.to_i
