@@ -2,7 +2,7 @@ module Lita
   module Handlers
     class Pet < Handler
       route /^java\s+(.+)/, :with_java, help: { "java TEXT" => "reply back with java." }
-      route /^(?:otp)\s+(.+)/, :otp, help: { "otp[ LENGTH]" => "reply one time password" }
+      route /^(?:otp)\s+(.+)/, :otp, help: { "otp LENGTH" => "reply one time password" }
       route /(.+)\(回文\)$/, :palindrome
       route /^(?:bj|ブラック)/, :black
 
@@ -13,11 +13,6 @@ module Lita
 
       def otp( response )
         length = response.matches[0][0]
-        if length.to_i <= 0 || length == nil
-          len = 15
-        else
-          len = length.to_i
-        end
         pattern = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
         pattern += ["!", "#", "$", "%", "&", "(", ")",
                     "=", "-", "^", "~", "*", "+", "?", "_"]
