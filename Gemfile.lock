@@ -13,6 +13,9 @@ GEM
     faye-websocket (0.9.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
+    flippy (0.1.2)
+      ruby-termios
+      trollop
     http_router (0.11.1)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -39,6 +42,10 @@ GEM
       lita (>= 4.0)
     lita-key-value (1.0.0)
       lita (>= 4.0)
+    lita-pebbles (0.0.2)
+      flippy (~> 0.1.2)
+      lita (>= 2.0)
+      pebbles-suddenly_death_string (~> 0.0.4)
     lita-slack (1.0.3)
       eventmachine
       faraday
@@ -51,6 +58,7 @@ GEM
       lita (>= 3.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
+    pebbles-suddenly_death_string (0.0.4)
     puma (2.10.2)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
@@ -58,10 +66,12 @@ GEM
     redis (3.2.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
+    ruby-termios (0.9.6)
     rufus-scheduler (2.0.24)
       tzinfo (>= 0.3.22)
     thor (0.19.1)
     thread_safe (0.3.4)
+    trollop (2.1.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     url_mount (0.2.1)
@@ -79,6 +89,7 @@ DEPENDENCIES
   lita-google
   lita-google-images
   lita-key-value
+  lita-pebbles
   lita-pet!
   lita-slack
   lita-sushiyuki
