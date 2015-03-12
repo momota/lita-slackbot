@@ -23,38 +23,38 @@ module Lita
         response.reply word.reverse
       end
 
-      @genki = "げんきだして！"
+      @@genki = "げんきだして！"
       route /疲(?!れ(?:様|さ(?:ま|ん)))/, :genki_1
       def genki_1( response )
-        response.reply '疲れてるの？' + @genki
+        response.reply '疲れてるの？' + @@genki
       end
       route /凹/, :genki_2
       def genki_2( response )
-        response.reply '凹んでるの？' + @genki
+        response.reply '凹んでるの？' + @@genki
       end
       route /心折/, :genki_3
       def genki_3( response )
-        response.reply '心折れてるの？' + @genki
+        response.reply '心折れてるの？' + @@genki
       end
       route /(?:寂|淋)し/, :genki_4
       def genki_4( response )
-        response.reply 'さびしいの？' + @genki
+        response.reply 'さびしいの？' + @@genki
       end
       route /弱っ/, :genki_5
       def genki_5( response )
-        response.reply '弱ってるの？' + @genki
+        response.reply '弱ってるの？' + @@genki
       end
       route /つらい/, :genki_6
       def genki_6( response )
-        response.reply 'つらくても' + @genki
+        response.reply 'つらくても' + @@genki
       end
       route /死にたい/, :genki_7
       def genki_7( response )
-        response.reply '死なないで' + @genki
+        response.reply '死なないで' + @@genki
       end
       route /(?:。。。|orz)/, :genki_8
       def genki_8( response )
-        response.reply @genki
+        response.reply @@genki
       end
 
       route /^(?:bj|ブラック)/, :black_joke
